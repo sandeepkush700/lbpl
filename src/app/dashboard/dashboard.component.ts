@@ -81,6 +81,8 @@ export class DashboardComponent implements OnInit {
         this.slectedSource = ''
         this.selectedSchema = ''
         this.selectedCase = ''
+        this.selectperiod=''
+        this.selectedPeriod=''
         return
       })
 
