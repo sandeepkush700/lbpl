@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { UrlService } from './url.service';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { BehaviorSubject } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -66,6 +67,17 @@ export class CommonService {
     } catch (error: any) {
       return error['error']
     }
+  }
+
+  private _isLoading = new BehaviorSubject<boolean>(false);
+  isLoading$ = this._isLoading.asObservable();
+
+  show(): void {
+    this._isLoading.next(true);
+  }
+
+  hide(): void {
+    this._isLoading.next(false);
   }
 
 }
