@@ -213,12 +213,12 @@
                                 <tbody>
                                     <tr *ngFor="let item of tabledata">
                                         <td>{{item.report_name}}</td>
-                                        <td>{{item.report_type}}</td>
-                                        <td>{{item.report_period}}</td>
+                                        <td>{{item.report_type ?? 'null'}}</td>
+                                        <td>{{item.report_period ?? 'null'}}</td>
                                         <td>{{item.uploaded_at}}</td>
                                         <td class="status-progress">SUCCESS</td>
-                                        <td class="table-icons">
-                                           <a [href]="'http://127.0.0.1:8000' + item.file" [download]="item.file" > <i class="fa fa-download"></i></a>
+                                        <td class="table-icons" >
+                                           <a title="download" [href]="'http://127.0.0.1:8000' + item.file" > <i class="fa fa-download"></i></a>
                                         </td>
                                     </tr>
                                 </tbody>
