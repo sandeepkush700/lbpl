@@ -1,0 +1,233 @@
+<body>
+    <app-header></app-header>
+
+    <div class="content" style="margin-top: 40px;">
+
+        <div class="title">Report Tools</div>
+        <div class="grid">
+            <div class="card">
+                <div class="card-header">
+                    <div class="round">
+                        <i class="fa fa-book" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Primary Sells</h3>
+                        <p>Extract Primary Sells Reports</p>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button (click)="onclick('Primary sells')"><i class="fa fa-arrow-down"></i>Download</button>
+
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="card-header">
+                    <div class="round">
+                        <i class="fa fa-list-alt" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Secondary Sells</h3>
+                        <p>Extract Secondary Sells Reports</p>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button (click)="onclick('Secondary sells')">
+                        <i class="fa fa-arrow-down"></i>Download
+                    </button>
+                </div>
+            </div>
+            <!-- <div class="card">
+                <div class="card-header" (click)="onclick('Manage Lineage')">
+                    <div class="round">
+                        <i class="fa fa-sitemap" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Manage Lineage</h3>
+                        <p>Mass upload/delete lineage to your Data Catalog tables to visualize how data flows through
+                            the systems</p>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button><i class="fa fa-arrow-up"></i>Upload</button>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" (click)="onclick('Manage Data Objects')">
+                    <div class="round">
+                        <i class="fa fa-database"></i>
+                    </div>
+                    <div>
+                        <h3>Manage Data Objects</h3>
+                        <p>Mass download/upload information to your Data Catalog schemas/tables/columns</p>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button><i class="fa fa-arrow-down"></i>Download</button>
+
+                    <button><i class="fa fa-arrow-up"></i>Upload</button>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" (click)="onclick('Manage BI Objects')">
+                    <div class="round">
+                        <i class="fa fa-bar-chart" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Manage BI Objects</h3>
+                        <p>Mass download/upload information to Data Catalog PowerBI objects, e.g., reports</p>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button><i class="fa fa-arrow-down"></i>Download</button>
+
+                    <button><i class="fa fa-arrow-up"></i>Upload</button>
+
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header" (click)="onclick('Manage Domains')">
+                    <div class="round">
+
+                        <i class="fa fa-share-alt" aria-hidden="true"></i>
+                    </div>
+                    <div>
+                        <h3>Manage Domains</h3>
+                        <p>Mass download/upload content of your landing page, e.g., CDL Subscription Domain page</p>
+                    </div>
+                </div>
+                <div class="actions">
+                    <button><i class="fa fa-arrow-down"></i>Download</button>
+
+                    <button><i class="fa fa-arrow-up"></i>Upload</button>
+
+                </div>
+            </div> -->
+        </div>
+    </div>
+</body>
+
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl">
+        <div class="modal-content ">
+            <div class="modal-body">
+
+                <body>
+                    <div class="container">
+                        <div class="modal-header" style="padding: 0;border: 0;">
+                            <div>
+                                <!-- <p style="margin: 0;font-size: 1.5rem;"> Bulk Data Objects Downloader</p> -->
+                                <p style="margin: 0;font-size: 1.5rem;">{{headingData}}</p>
+
+                                <p class="font">Download information from your data objects in bulk. Use
+                                    with caution!</p>
+                            </div>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"
+                                (click)="closeModal()"></button>
+                        </div>
+
+
+                        <div class="notes">
+                            <p class="font">Note: This tool can download up 20000 pages content with one
+                                next extract. Use with caution!</p>
+                        </div>
+
+                        <div class="row mt-4 mb-5" style="font-weight: bold;">
+                            <div class="col-md-3 mb-2">
+                                <label for="dataSource" class="form-label">Report Name*</label>
+                                <select class="form-select" id="dataSource" [(ngModel)]="selectSource"
+                                    (change)="onSelectsourceName($event)">
+                                    <option value="">--select--</option>
+                                    <option *ngFor="let option of reportName" [value]="option.value">
+                                        {{ option.value }}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-md-3 mb-2">
+                                <label for="schemaName" class="form-label">Report Type*</label>
+                                <select class="form-select" id="schemaName" [(ngModel)]="selectSchema"
+                                    (change)="onSelectSchemaName($event)">
+
+                                    <option value="">--select--</option>
+                                    <option *ngFor="let option of reportType" [value]="option.value">
+                                        {{ option.value }}
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3 mb-2">
+                                <label for="schemaCase" class="form-label">Report Case*</label>
+                                <select class="form-select" id="schemaCase" [(ngModel)]="selectcase"
+                                    (change)="selectReportCase($event)">
+
+                                    <option value="">--select--</option>
+                                    <option *ngFor="let option of reportCase" [value]="option.value">
+                                        {{ option.value }}
+                                    </option>
+                                </select>
+                            </div>
+
+                            <div class="col-md-3 mb-2">
+                                <label for="objectType" class="form-label">Report Period*</label>
+                                <select class="form-select" id="objectType" [(ngModel)]="selectperiod"  (change)="selectReportPeriod($event)">
+                                    <option value="">--select--</option>
+                                    <option *ngFor="let option of reportperiod" [value]="option.value">
+                                        {{ option.value }}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="col-md-1 pt-2 mt-4 rightside">
+                                <button class="btn btn-secondary" (click)="OnExtract()">Extract</button>
+                            </div>
+                            <span class="border-end"></span>
+                            <!-- <p class="font" style="margin-top: 10px;">Once status in changed in SUCCESS, the download
+                                the extract or
+                                modify curation in UI and upload it to Data Catalog*</p> -->
+
+                        </div>
+
+                        <div class="table-container">
+                            <div (click)="refrece()" class="fRight"><i class="fa fa-refresh"
+                                    aria-hidden="true" [class.animate]="animateIcon"></i>
+
+                            </div>
+                            <table class="table table-bordered">
+                                <thead class="tHeader">
+                                    <tr>
+                                        <th>Report Name</th>
+                                        <th>Report Type</th>
+                                        <th>Report Period</th>
+                                        <!-- <th>Job ID</th> -->
+                                        <!-- <th>Update Date</th> -->
+                                        <th>Create Date</th>
+                                        <th>Status</th>
+                                        <th>Download</th>
+                                        <!-- <th>Download/Modify in UI</th> -->
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let item of tabledata">
+                                        <td>{{item.report_name}}</td>
+                                        <td>{{item.report_type}}</td>
+                                        <td>{{item.report_period}}</td>
+                                        <td>{{item.uploaded_at}}</td>
+                                        <td class="status-progress">SUCCESS</td>
+                                        <td class="table-icons">
+                                           <a [href]="'http://127.0.0.1:8000' + item.file" [download]="item.file" > <i class="fa fa-download"></i></a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </body>
+
+            </div>
+        </div>
+    </div>
+</div>

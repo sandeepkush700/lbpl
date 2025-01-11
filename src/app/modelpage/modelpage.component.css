@@ -1,0 +1,13 @@
+.notes {
+    background-color: #ccc;
+    color: #000;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.tHeader tr, td {
+    font-size: 12px;
+}
+.tHeader {
+    background-color: red;
+}

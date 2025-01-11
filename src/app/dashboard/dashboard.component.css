@@ -1,0 +1,221 @@
+ body {
+     font-family: Arial, sans-serif;
+     margin: 0;
+     padding: 0;
+     font-size: smaller;
+ }
+
+ .header {
+     background-color: #003b7e;
+     color: white;
+     padding: 10px 20px;
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+ }
+
+ .header .logo {
+     font-size: 1.5rem;
+ }
+
+ .header .user-section {
+     display: flex;
+     align-items: center;
+ }
+
+ .header .user-section span {
+     margin-right: 10px;
+ }
+
+ .content {
+     padding: 20px;
+     margin-left: 5%;
+ }
+
+ .title {
+     font-size: 1.25rem;
+     margin-bottom: 20px;
+ }
+
+ .grid {
+     display: grid;
+     grid-template-columns: repeat(2, 1fr);
+     gap: 20px;
+ }
+
+ .card {
+     background-color: white;
+     padding: 10px;
+     border-radius: 8px;
+     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+     display: flex;
+     flex-direction: column;
+     gap: 10px;
+     margin-right: 50px;
+ }
+
+ .card-header {
+     display: flex;
+     align-items: center;
+     height: 100px;
+ }
+
+ .card-header img {
+     width: 30px;
+     height: 30px;
+     margin-right: 10px;
+ }
+
+ .card h3 {
+     margin: 0;
+     font-size: 0.9rem;
+     
+ }
+
+ .card p {
+     margin: 5px 0;
+     font-size: 0.75rem;
+     color: #666;
+ }
+
+ .card .actions {
+     display: flex;
+     justify-content: flex-start;
+     gap: 10px;
+ }
+
+ .round {
+     border: 1px solid #ccc;
+     padding: 14px 19px;
+     border-radius: 50%;
+     margin-right: 20px;
+     box-shadow: 2px 1px #cccccc96;
+     color: #003b7e;
+ }
+
+ .card .actions button {
+     padding: 5px 10px;
+     font-size: 0.75rem;
+     /* color: #003b7e; */
+     background-color: transparent;
+     border: none;
+     cursor: pointer;
+     display: flex;
+     align-items: center;
+     gap: 5px;
+ }
+
+ .card .actions button:hover {
+     text-decoration: underline;
+ }s
+
+ .card .actions button img {
+     width: 15px;
+     height: 15px;
+ }
+
+ .border-end{
+    border-bottom: 1px solid rgb(206, 200, 200);
+ }
+
+ /* modal css */
+
+ .custom-header {
+     font-size: 1.25rem;
+     font-weight: bold;
+     margin-bottom: 15px;
+ }
+
+ .table-container {
+     overflow-x: auto;
+ }
+
+ .form-select,
+ .btn {
+     margin-bottom: 10px;
+     font-size: small;
+ }
+
+ .status-progress {
+     color: orange;
+ }
+
+ .status-success {
+     color: green;
+ }
+
+ .notes {
+    background-color: #e6e6e6;
+    color: #000;
+    font-weight: 700;
+    margin-top: 15px;
+}
+
+.tHeader tr, td {
+    font-size: 12px;
+   
+}
+.tHeader th {
+    background-color: rgb(7, 3, 35) !important; 
+    color: white;
+    padding: 0.7rem;
+}
+
+.fRight{
+    float: right;
+    background-color: rgb(7, 3, 35);
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.table-icons{
+display: flex;
+justify-content: space-around;
+align-items: center;
+font-size: 1rem;
+}
+
+.fa-edit,.fa-download{
+    cursor: pointer;
+    
+}
+
+select{
+    border:1px solid black;
+}
+
+.font{
+    font-weight: 600;
+}
+
+.table-bordered{
+    border:1px solid rgb(203, 197, 197);
+
+}
+
+/* Spin animation */
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  /* Apply the animation when the class is active */
+  .animate {
+    display: inline-block;
+    animation: spin 0.6s linear; /* Adjust duration and easing as needed */
+  }
+
+  .rightside{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+  }
+  .rightside button{
+   background-color: rgb(7, 3, 35);
+  }

@@ -1,0 +1,80 @@
+body {
+    font-family: sans-serif;
+    margin: 0;
+    /* Remove default body margin */
+}
+
+.header {
+    background-color: #f0f0f0;
+    /* Light gray background */
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    /* Vertically center content */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    /* Add shadow to header */
+    border-bottom: 4px solid #ddd;
+    /* Thicker bottom border */
+    position: relative;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+    color:#003b7e ;
+}
+.logo span{
+    display: block;
+}
+
+.logo img {
+    height: 30px;
+    /* Adjust logo height as needed */
+    margin-right: 5px;
+}
+
+.logo span {
+    display: block;
+  }
+
+.title {
+    font-size: 1.2em;
+    font-weight: bold;
+}
+
+.breadcrumbs {
+    margin-left: auto;
+    /* Push breadcrumbs to the right */
+    font-size: smaller;
+}
+
+.breadcrumbs a {
+    text-decoration: none;
+    color: #333;
+}
+
+.breadcrumbs span {
+    margin: 0 5px;
+}
+
+.breadcrumbs span.current {
+    font-weight: bold;
+}
+
+.right-icons {
+    margin-left: auto;
+    /* Push icons to the right */
+    display: flex;
+    align-items: center;
+
+    gap: 10px;
+}
+
+.right-icons img {
+    height: 20px;
+    /* Adjust icon height as needed */
+    margin-left: 10px;
+    opacity: 0.7;
+    /* Slightly reduce opacity */
+}

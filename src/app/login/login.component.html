@@ -1,0 +1,23 @@
+<body>
+    <div class="login-container">
+        
+        <div class="login-header">
+            <h2>LBPL Portal Report</h2>
+        </div>
+        <form class="login-form" [formGroup]="loginForm" (ngSubmit)="onLogin()">
+            <label for="username">Username</label>
+            <input type="text" id="username" placeholder="Enter your username" formControlName="username">
+            <span class="error-message" *ngIf="submitted && f.username.errors">required</span>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" formControlName="password">
+            <div class="error-message" *ngIf="submitted && f.password.errors">required</div>
+
+
+            <button type="submit">Login</button>
+        </form>
+        <div class="login-footer">
+            <a href="#">Forgot Password?</a>
+        </div>
+    </div>
+</body>

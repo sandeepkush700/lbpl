@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bulk Data Objects Downloader</title>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="container py-5">
+    <h2 class="mb-0">Bulk Data Objects Downloader</h2>
+    <span class="text-muted text-center">
+      Download information from your data objects in bulk. Use with caution!
+    </span>
+
+    <div class="notes">
+        <p>This is testing This is testing This is testing</p>
+    </div>
+
+    <div class="row mt-4 mb-5">
+      <div class="col-md-3 mb-2">
+        <label for="dataSource" class="form-label">Choose data source name*</label>
+        <select class="form-select" id="dataSource">
+          <option selected>Select Data Source</option>
+          <option>FlexShareTest</option>
+          <option>LITTestIDs</option>
+          <option>Workday_2</option>
+        </select>
+      </div>
+      <div class="col-md-3 mb-2">
+        <label for="schemaName" class="form-label">Choose schema name</label>
+        <select class="form-select" id="schemaName">
+          <option selected>Select Schema</option>
+          <option>cdl_other_pipeline_prod</option>
+          <option>workday_2</option>
+          <option>cdl_customer_prod_default</option>
+        </select>
+      </div>
+      <div class="col-md-3 mb-2">
+        <label for="objectType" class="form-label">Choose type of objects*</label>
+        <select class="form-select" id="objectType">
+          <option selected>Select Object Type</option>
+          <option>All</option>
+          <option>Schema</option>
+        </select>
+      </div>
+      <div class="col-md-1 pt-2 mt-4">
+        <button class="btn btn-primary">Extract</button>
+      </div>
+
+
+      <h5>ewrwlthlwh</h5>
+    </div>
+    
+
+    <div class="table-container pt-4">
+      <table class="table table-bordered">
+        <thead class="tHeader">
+          <tr>
+            <th>Object Type</th>
+            <th>Data Source Name</th>
+            <th>Schema Name</th>
+            <th>Job ID</th>
+            <th>Update Date</th>
+            <th>Create Date</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ALL</td>
+            <td>FlexShareTest</td>
+            <td>cdl_other_pipeline_prod</td>
+            <td>3a113d01-f04e-430e-b***</td>
+            <td>05-Dec-2024</td>
+            <td>05-Dec-2024</td>
+            <td class="status-progress">IN PROGRESS</td>
+            <td>
+              <button class="button" disabled>Download</button>
+              <button class="button" disabled>Modify</button>
+            </td>
+          </tr>
+          <tr>
+            <td>SCHEMA</td>
+            <td>LITTestIDs</td>
+            <td>workday_2</td>
+            <td>6200280b-b58b-408c-a***</td>
+            <td>19-Nov-2024</td>
+            <td>19-Nov-2024</td>
+            <td class="status-progress">IN PROGRESS</td>
+            <td>
+              <button class="btn btn-sm btn-secondary" disabled>Download</button>
+              <button class="btn btn-sm btn-secondary" disabled>Modify</button>
+            </td>
+          </tr>
+          <tr>
+            <td>ALL</td>
+            <td>FlexShare</td>
+            <td>cdl_customer_prod_default</td>
+            <td>f0657b80-b700-43af-a***</td>
+            <td>19-Nov-2024</td>
+            <td>19-Nov-2024</td>
+            <td class="status-success">SUCCESS</td>
+            <td>
+              <button class="btn btn-sm btn-success">Download</button>
+              <button class="btn btn-sm btn-primary">Modify</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
